@@ -1,0 +1,23 @@
+POST http://localhost:8080/api/security/apikey/generateKey
+Content-Type: application/json
+
+{
+  "name": "Ahmed",
+  "password": "HelloWorld"
+}
+//This request will generate the token, use it in the next request by passing it in the My-Token header.
+###
+POST http://localhost:8080/api/v1/fruit/save
+Content-Type: application/json
+My-Token: sQGXT7jtRpraam0Qr4Ytlu4ixk45hl2kmnT5bKnbknIYtGwsvm7K1Fpv3knYqk98
+
+{
+  "name": "Apple"
+}
+
+###
+
+GET http://localhost:8080/api/v1/fruit/findAll
+My-Token: sQGXT7jtRpraam0Qr4Ytlu4ixk45hl2kmnT5bKnbknIYtGwsvm7K1Fpv3knYqk98
+
+###
